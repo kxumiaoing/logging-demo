@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 
 public class Log4jTest {
     public static void main(String[] args) throws Exception {
-//        System.setProperty("log4j.configuration", "log4j-manual.txt");
+        System.setProperty("log4j.configuration", "log4j-manual.txt");
         Logger comLogger = Logger.getLogger("com");
 
         comLogger.debug("debug message. --- " + comLogger.getLevel());
