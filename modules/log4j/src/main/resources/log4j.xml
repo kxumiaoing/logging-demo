@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://toolkit.alibaba-inc.com/dtd/log4j/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!--log4j.appender.X=org.apache.log4j.ConsoleAppender-->
+    <!--log4j.appender.X.layout=org.apache.log4j.PatternLayout-->
+    <!--log4j.appender.X.layout.ConversionPattern=%d %5p (%c:%L) - %m%n-->
+    <!--log4j.appender.X.Encoding=UTF-8-->
+
+    <!--log4j.appender.Y=org.apache.log4j.DailyRollingFileAppender-->
+    <!--log4j.appender.Y.File=log4j-y.log-->
+    <!--log4j.appender.Y.DatePattern='.'yyyy-MM-dd-->
+    <!--log4j.appender.Y.layout=org.apache.log4j.PatternLayout-->
+    <!--log4j.appender.Y.layout.ConversionPattern=%d %5p (%c:%L) - %m%n-->
+    <!--log4j.appender.Y.Encoding=UTF-8-->
+
+    <!--log4j.logger.com=INFO-->
+
+    <!--log4j.logger.com.zhangsan=WARN,Y-->
+    <appender name="X" class="org.apache.log4j.ConsoleAppender">
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %5p (%c:%L) - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="Y" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="log4j-y.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %5p (%c:%L) - %m%n"/>
+        </layout>
+    </appender>
+    
+    <logger name="com">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="com.zhangsan">
+        <level value="WARN"/>
+        <appender-ref ref="Y"/>
+    </logger>
+
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="X"/>
+    </root>
+
+</log4j:configuration>

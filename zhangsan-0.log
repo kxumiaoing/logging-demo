@@ -1,0 +1,4 @@
+WARNING:com.xumiao.logging.jul.JULTest.main:warning message(WARNING)
+SEVERE:com.xumiao.logging.jul.JULTest.main:severe message(WARNING)
+WARNING:com.xumiao.logging.jul.JULTest.main:warning message(null)
+SEVERE:com.xumiao.logging.jul.JULTest.main:severe message(null)

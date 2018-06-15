@@ -1,0 +1,24 @@
+# The five logging levels used by Log are (in order):
+#
+#   1. DEBUG (the least serious)
+#   2. INFO
+#   3. WARN
+#   4. ERROR
+#   5. FATAL (the most serious)
+log4j.rootLogger=DEBUG,X
+
+log4j.appender.X=org.apache.log4j.ConsoleAppender
+log4j.appender.X.layout=org.apache.log4j.PatternLayout
+log4j.appender.X.layout.ConversionPattern=%d %5p (%c:%L) - %m%n
+log4j.appender.X.Encoding=UTF-8
+
+log4j.appender.Y=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.Y.File=log4j-y.log
+log4j.appender.Y.DatePattern='.'yyyy-MM-dd
+log4j.appender.Y.layout=org.apache.log4j.PatternLayout
+log4j.appender.Y.layout.ConversionPattern=%d %5p (%c:%L) - %m%n
+log4j.appender.Y.Encoding=UTF-8
+
+log4j.logger.com=INFO
+
+log4j.logger.com.zhangsan=WARN,Y
